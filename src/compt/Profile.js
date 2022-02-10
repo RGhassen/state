@@ -7,15 +7,19 @@ class Profile extends React.Component{
             bio : "im a full stuck web developer (MERN)",
             profession : "Student at Go my code",
             imgSrc : <img src="/image2.jpg" alt="error"/>,
+            count : 0
 
           }
           
         
       }
+       componentDidMount(){
+          setInterval(()=>this.setState({count:this.state.count+1}),1000)}
 
     render(){
       return(
         <div id="profile">
+          <h3>{this.state.count}</h3>
             <section id="profile-cat">
             {this.state.imgSrc}
             <h3>hi, my name is {this.state.fullName} </h3>
